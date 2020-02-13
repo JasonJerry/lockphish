@@ -1,6 +1,6 @@
 # Lockphish v1.0
 
-Lockphish is a tool for phishing attacks on the lock screen, designed to grab Windows credentials, Android PIN and iPhone Passcode
+Lockphish is a tool for phishing attacks on the lock screen, designed to grab Windows credentials, Android PIN and iPhone Passcode using a https link.
 
 ## Author: https://github.com/thelinuxchoice/lockphish
 ## Twitter: https://twitter.com/linux_choice
