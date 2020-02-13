@@ -2,17 +2,17 @@
 
 Lockphish is a tool for phishing attacks on the lock screen, designed to grab Windows credentials, Android PIN and iPhone Passcode
 
-## Author: https://github.com/thelinuxchoice
+## Author: https://github.com/thelinuxchoice/lockphish
 ## Twitter: https://twitter.com/linux_choice
 
 ![lp](https://user-images.githubusercontent.com/34893261/74437970-e5025000-4e47-11ea-9291-d83afd3fe008.png)
 
 ### Features:
 
-## Lockscreen phishing page for Windows, Android and iPhone
-## Auto detect device
-## Port Forwarding by Ngrok
-## IP Tracker
+#### Lockscreen phishing page for Windows, Android and iPhone
+#### Auto detect device
+#### Port Forwarding by Ngrok
+#### IP Tracker
 
 ## Legal disclaimer:
 
@@ -27,5 +27,5 @@ bash lockphish.sh
 
 ### Donate a coffee!
 Support the authors:
-## Paypal:
+#### Paypal:
 https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CLKRT5QXXFJY4&source=url
