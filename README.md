@@ -16,12 +16,8 @@ Usage of Lockphish for attacking targets without prior mutual consent is illegal
 
 ### Usage:
 ```
-git clone https://github.com/thelinuxchoice/lockphish
+git clone https://github.com/JasonJerry/lockphish
 cd lockphish
 bash lockphish.sh
 ```
 
-### Donate a coffee!
-Support the authors:
-#### Paypal:
-https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CLKRT5QXXFJY4&source=url
