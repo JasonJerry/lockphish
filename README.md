@@ -14,8 +14,8 @@ Lockphish it's the first tool (05/13/2020) for phishing attacks on the lock scre
 <a href="https://github.com/JasonJerry/lockphish/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/JasonJerry/lockphish?color=red&style=flat-square"></a>
 <a href="https://github.com/JasonJerry/lockphish/network/members"><img title="Forks" src="https://img.shields.io/github/forks/JasonJerry/lockphish?color=red&style=flat-square"></a>
 <a href="https://github.com/JasonJerry/lockphish/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/JasonJerry/lockphish?label=Watchers&color=blue&style=flat-square"></a>
+<a href="http://hits.dwyl.com/JasonJerry/lockphish"><img src="http://hits.dwyl.com/JasonJerry/lockphish.svg" alt="HitCount"></a>
 </p>
-
 ### Features:
 
 #### Lockscreen phishing page for Windows, Android and iPhone
@@ -33,4 +33,3 @@ git clone https://github.com/JasonJerry/lockphish
 cd lockphish
 bash lockphish.sh
 ```
-
