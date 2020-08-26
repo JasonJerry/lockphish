@@ -36,5 +36,5 @@ bash lockphish.sh
 ```
 
 <p>
-<img src="https://visitor-badge.laobi.icu/badge?page_id=JasonJerry" alt="visitor badge"/>
+<img src="https://visitor-badge.laobi.icu/badge?page_id=JasonJerry.lockphish" alt="visitor badge"/>
 </p>
