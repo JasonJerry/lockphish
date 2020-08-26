@@ -34,3 +34,7 @@ git clone https://github.com/JasonJerry/lockphish
 cd lockphish
 bash lockphish.sh
 ```
+
+<p>
+<img src="https://visitor-badge.laobi.icu/badge?page_id=JasonJerry" alt="visitor badge"/>
+</p>
