@@ -32,6 +32,7 @@ Usage of Lockphish for attacking targets without prior mutual consent is illegal
 ```
 git clone https://github.com/JasonJerry/lockphish
 cd lockphish
+chmod +x lockphish.sh
 bash lockphish.sh
 ```
 
